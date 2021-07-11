@@ -83,6 +83,28 @@ func GetInt64(path string, predefined int64) int64 {
 	return predefined
 }
 
+func GetInt64Slice(path string, delimiter string) []int64 {
+	res := make([]int64, 0)
+	getInt := os.Getenv(path)
+	if getInt == "" {
+		return res
+	}
+	// set default delimiter if empty
+	if delimiter == "" {
+		delimiter = defaultDelimiter
+	}
+	getIntSlice := strings.Split(getInt, delimiter)
+	if len(getIntSlice) > 0 {
+		for _, v := range getIntSlice {
+			ires, err := strconv.ParseInt(v, 10, 64)
+			if err == nil {
+				res = append(res, ires)
+			}
+		}
+	}
+	return res
+}
+
 func GetFloat32(path string, predefined float32) float32 {
 	res := os.Getenv(path)
 	if res != "" {

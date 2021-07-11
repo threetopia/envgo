@@ -89,6 +89,28 @@ func TestGoEnv_GetInt64(t *testing.T) {
 	}
 }
 
+func TestGoEnv_GetInt64Slice(t *testing.T) {
+	err := LoadDotEnv()
+	if err != nil {
+		t.Errorf("Error (%s)", err.Error())
+	}
+	slc := [5]int64{1, 2, 3, 4, 5}
+	// test with default delimiter
+	slice := GetInt64Slice("TEST_GET_NUMBER_SLICE", "")
+	for k, v := range slc {
+		if slice[k] != v {
+			t.Errorf("Not Match (%d is wrong value for %d)", slice[k], v)
+		}
+	}
+	// test with custom delimiter
+	slice = GetInt64Slice("TEST_GET_NUMBER_SLICE_DELIMITER", ",")
+	for k, v := range slc {
+		if slice[k] != v {
+			t.Errorf("Not Match (%d is wrong value for %d)", slice[k], v)
+		}
+	}
+}
+
 func TestGoEnv_GetFloat32(t *testing.T) {
 	err := LoadDotEnv()
 	if err != nil {
