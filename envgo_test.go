@@ -5,14 +5,14 @@ import (
 	"testing"
 )
 
-func TestGoEnv_LoadDotEnv(t *testing.T) {
+func TestEnvGo_LoadDotEnv(t *testing.T) {
 	err := LoadDotEnv()
 	if err != nil {
 		t.Errorf("Error (%s)", err.Error())
 	}
 }
 
-func TestGoEnv_GetString(t *testing.T) {
+func TestEnvGo_GetString(t *testing.T) {
 	err := LoadDotEnv()
 	if err != nil {
 		t.Errorf("Error (%s)", err.Error())
@@ -23,7 +23,7 @@ func TestGoEnv_GetString(t *testing.T) {
 	}
 }
 
-func TestGoEnv_GetStringSlice(t *testing.T) {
+func TestEnvGo_GetStringSlice(t *testing.T) {
 	err := LoadDotEnv()
 	if err != nil {
 		t.Errorf("Error (%s)", err.Error())
@@ -45,7 +45,7 @@ func TestGoEnv_GetStringSlice(t *testing.T) {
 	}
 }
 
-func TestGoEnv_GetInt(t *testing.T) {
+func TestEnvGo_GetInt(t *testing.T) {
 	err := LoadDotEnv()
 	if err != nil {
 		t.Errorf("Error (%s)", err.Error())
@@ -56,7 +56,7 @@ func TestGoEnv_GetInt(t *testing.T) {
 	}
 }
 
-func TestGoEnv_GetIntSlice(t *testing.T) {
+func TestEnvGo_GetIntSlice(t *testing.T) {
 	err := LoadDotEnv()
 	if err != nil {
 		t.Errorf("Error (%s)", err.Error())
@@ -78,7 +78,7 @@ func TestGoEnv_GetIntSlice(t *testing.T) {
 	}
 }
 
-func TestGoEnv_GetInt64(t *testing.T) {
+func TestEnvGo_GetInt64(t *testing.T) {
 	err := LoadDotEnv()
 	if err != nil {
 		t.Errorf("Error (%s)", err.Error())
@@ -89,7 +89,7 @@ func TestGoEnv_GetInt64(t *testing.T) {
 	}
 }
 
-func TestGoEnv_GetInt64Slice(t *testing.T) {
+func TestEnvGo_GetInt64Slice(t *testing.T) {
 	err := LoadDotEnv()
 	if err != nil {
 		t.Errorf("Error (%s)", err.Error())
@@ -111,7 +111,7 @@ func TestGoEnv_GetInt64Slice(t *testing.T) {
 	}
 }
 
-func TestGoEnv_GetFloat32(t *testing.T) {
+func TestEnvGo_GetFloat32(t *testing.T) {
 	err := LoadDotEnv()
 	if err != nil {
 		t.Errorf("Error (%s)", err.Error())
@@ -122,7 +122,7 @@ func TestGoEnv_GetFloat32(t *testing.T) {
 	}
 }
 
-func TestGoEnv_GetFloat64(t *testing.T) {
+func TestEnvGo_GetFloat64(t *testing.T) {
 	err := LoadDotEnv()
 	if err != nil {
 		t.Errorf("Error (%s)", err.Error())
@@ -133,7 +133,7 @@ func TestGoEnv_GetFloat64(t *testing.T) {
 	}
 }
 
-func TestGoEnv_GetBool(t *testing.T) {
+func TestEnvGo_GetBool(t *testing.T) {
 	err := LoadDotEnv()
 	if err != nil {
 		t.Errorf("Error (%s)", err.Error())
@@ -144,7 +144,7 @@ func TestGoEnv_GetBool(t *testing.T) {
 	}
 }
 
-func TestGoEnv_GetPort(t *testing.T) {
+func TestEnvGo_GetPort(t *testing.T) {
 	err := LoadDotEnv()
 	if err != nil {
 		t.Errorf("Error (%s)", err.Error())
